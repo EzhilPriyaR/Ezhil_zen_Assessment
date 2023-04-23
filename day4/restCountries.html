@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HI EZHIL!!!!!</h1>
+    <script>
+        function reqListener() {
+            console.log(JSON.parse(this.responseText));
+            var response = JSON.parse(this.responseText);
+            var data = [];
+            for(let countryDetail in response){
+                data.push(response[countryDetail].flags);
+            }
+            console.log(data);
+
+            //printing country name, region, sub-region and population
+            var dataArray = [];
+            const countryDetail = {};
+            for(let detail in response){
+                countryDetail.name = response[detail].name;
+                countryDetail.region = response[detail].region;
+                countryDetail.subregion = response[detail].subregion;
+                countryDetail.population = response[detail].population;
+                dataArray.push(countryDetail);
+            }
+            console.log(dataArray);
+        }
+        const request = new XMLHttpRequest();
+        request.addEventListener("load", reqListener);
+        request.open("GET", "https://restcountries.com/v3.1/all");
+        request.send();
+    </script>
+</body>
+</html>
