@@ -1,0 +1,14 @@
+.ratings i{
+    
+    color: orange;
+    font-size:32px;
+    margin-top: 20px;
+    margin-right: 5px;
+}
+.labelClass::after{
+    content: "*";
+    color: red;
+}
+td{
+    text-align: center;
+}
