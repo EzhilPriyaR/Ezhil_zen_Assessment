@@ -1,0 +1,4 @@
+.labelClass::after{
+    content: "*";
+    color: red;
+}
