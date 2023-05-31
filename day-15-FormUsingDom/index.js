@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EMPLOYEE DETAILS</title>
+        <h1 id="title" style="border-color: cornflowerblue; color: brown; padding-top: 20px; text-align: center;">EMPLOYEE DETAILS</h1>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <div class="container">
+            <form  class="was-validated" id="form">
+                <div class="row mt-4" style="flex:1">
+                    <p id="description"> The form contains input fields, that every employee needs to fill. Once he/she submit, the details will be updated in the employee table</p>
+                </div>
+                <div class="form-group">
+                    <label class="labelClass" for="first-name"><b>NAME</b></label>
+                    <div class="row mt-4" style="flex:1">
+                        <div class="col-4 d-flex flex-column">
+                          <input type="text" id="first-name" class="form-control" placeholder="First Name" required>
+                        </div>
+                        <div class="col-4 d-flex flex-column">
+                          <input type="text" id="last-name" class="form-control" placeholder="Last Name" required>
+                        </div>
+                    </div>
+                </div>
+                <div class = "form-group">
+                    <div class="row mt-4" style="flex:1">
+                        <label class="labelClass" for="address"><b>ADDRESS</b></label>
+                        <div class="col-8 d-flex flex-column">
+                            <textarea id="address" class="form-control" placeholder="Enter Your permanent address..." required rows="2"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4" style="flex:1">
+                    <label class="labelClass"><b>GENDER</b></label>
+                    <div class="col-4 d-flex flex-column">
+                        <div id="genderInput">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="Male"  required>
+                                <label class="form-check-label" for="flexRadioDefault1">Male</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="Female"  required>
+                                <label class="form-check-label" for="flexRadioDefault2">Female</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" value="Others"  required>
+                                <label class="form-check-label" for="flexRadioDefault3">Others</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4" style="flex:1">
+                    <label><b>CHOICE OF FOOD(Select any two)</b></label>
+                    <div class="col-4 d-flex flex-column" id="choiceOfFoodInput" >
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="choiceOfFood" value="Idli" id="flexCheckDefault" >
+                            <label class="form-check-label" for="flexCheckDefault">IDLI</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="choiceOfFood" value="Dosa" id="flexCheckDefault1" >
+                            <label class="form-check-label" for="flexCheckDefault1">DOSA</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="choiceOfFood" value="Puri" id="flexCheckDefault2" >
+                            <label class="form-check-label" for="flexCheckDefault2">PURI</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="choiceOfFood" value="Chapati" id="flexCheckDefault3" >
+                            <label class="form-check-label" for="flexCheckDefault3">CHAPATHI</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="choiceOfFood" value="Parotta" id="flexCheckDefault4" >
+                            <label class="form-check-label" for="flexCheckDefault4">PAROTTA</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4" style="flex:1">
+                    <label class="labelClass" for="stateInput"><b>STATE</b></label>
+                    <div class="col-8 d-flex flex-column">
+                        <input type="text" id="stateInput" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row mt-4" style="flex:1">
+                        <label class="labelClass" for="pincode"><b>PINCODE</b></label>
+                        <div class="col-8 d-flex flex-column">
+                            <input type="text" id="pincode" class="form-control" placeholder="Enter the code of the location.." required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4" style="flex:1">
+                    <label class="labelClass" for="countryInput"><b>COUNTRY</b></label>
+                    <div class="col-8 d-flex flex-column">
+                        <input type="text" id="countryInput" class="form-control" required>
+                    </div>
+                </div>
+                <div class="row mt-4" style="flex:1">
+                    <div class="col-3 d-flex flex-column">
+                        <input type="submit" id = "submit" class="btn btn-primary" value="SUBMIT" onclick="updateTable()">
+                    </div>
+                    <div class="col-3 d-flex flex-column">
+                        <input type="reset" class="btn btn-secondary" value="RESET" onclick="clearFields()">
+                    </div>
+                </div>
+                <div class="row mt-4" style="flex:1">
+                    <div class="col-4 d-flex flex-column">
+                        <h4 id="title" style="border-color: aqua; color: brown; border: 1px solid black;">EMPLOYEE DETAILS:</h4>
+                    </div>
+                </div>
+                <div class="row mt-4" style="flex:1">
+                    <div class="col-8 d-flex flex-column">
+                        <table id="table" class="table table-striped table-bordered">
+                            <thead>
+                                <th>Employee Name</th>
+                                <th>Address</th>
+                                <th>Gender</th>
+                                <th>Food</th>
+                                <th>State</th>
+                                <th>Pincode</th>
+                                <th>country</th>
+                            </thead>
+                            <tbody>
+                                <tr id="table-row">
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </form> 
+        </div>
+        <script src="./script.js"></script>
+    </body>
+</html>
