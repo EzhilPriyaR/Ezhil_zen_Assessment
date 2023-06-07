@@ -1,0 +1,22 @@
+
+.container{
+ 
+    border-radius: 20px;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));  
+    padding: 20px;
+    gap: 30px;
+}
+
+#title{
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-bottom:10px;
+    margin-top: 20px;
+    color: coral;
+    color: rgb(139, 0, 0);
+     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+   }
+   
+ 
